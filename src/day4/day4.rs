@@ -1,5 +1,4 @@
 use advent_of_code_2022::file_utils::read_lines;
-use std::collections::HashSet;
 
 pub fn part1() {
     let file_path : String = "src/day4/1.txt".to_string();
