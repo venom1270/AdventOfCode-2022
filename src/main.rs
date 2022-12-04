@@ -7,6 +7,9 @@ mod day2 {
 mod day3 {
     pub mod day3;
 }
+mod day4 {
+    pub mod day4;
+}
 
 
 fn day1() {
@@ -30,6 +33,13 @@ fn day3() {
     day3::day3::part2();
 }
 
+fn day4() {
+    print!("Part 1: ");
+    day4::day4::part1();
+    print!("Part 2: ");
+    day4::day4::part2();
+}
+
 fn main() {
-    day3();
+    day4();
 }
