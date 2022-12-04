@@ -1,7 +1,7 @@
 # AdventOfCode-2022
-Learning a new language with AoC2022 - Rust!
+Learning a new language with [AoC2022](https://adventofcode.com/2022) - [Rust](https://www.rust-lang.org/)!
 
-Using VS code with Rust extension (duh!).
+Using [VS code](https://code.visualstudio.com/) with [Rust extension](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) (duh!).
 
 ## Day 1
 
