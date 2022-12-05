@@ -10,6 +10,9 @@ mod day3 {
 mod day4 {
     pub mod day4;
 }
+mod day5 {
+    pub mod day5;
+}
 
 
 fn day1() {
@@ -40,6 +43,14 @@ fn day4() {
     day4::day4::part2();
 }
 
+fn day5() {
+    print!("Part 1: ");
+    day5::day5::part1();
+    print!("Part 2: ");
+    day5::day5::part2();
+}
+
+
 fn main() {
-    day4();
+    day5();
 }

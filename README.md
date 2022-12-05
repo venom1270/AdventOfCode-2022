@@ -18,3 +18,8 @@ Used a set for part 1 (could have also used an array I guess). For part 2 I had 
 ## Day 4
 
 Easy, no problems. Used `split()` and `collect()` for input parsing in addition to `expect()`, although I could have also used `unwrap()`, but it's not recommended (according to VS Code Rust plugin). A strange pattern I'm noticing is that part 2 is usually a bit easier than part 1. Or am I doing something wrong?
+
+## Day 5
+
+The hardest and most tedious part by far was parsing the input. I solved this by simulating the stacks - used a Rust version of a stack - `Vec` (basically a list/vector in C++), but had to push in front, so I used `VecDeq` instead (supports both `push_back()` and `push_front()`). From there I just simulated the crane moving the crates. Maybe not the most optimal, but I got to use Rust collections a bit more and `match` actually came in handy - the traditional way without `match` does not work in reality due some "mutable reference borrowing" magic I don't quite understand (yet!).
+
