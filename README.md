@@ -25,4 +25,8 @@ The hardest and most tedious part by far was parsing the input. I solved this by
 
 ## Day 6
 
-Relatively easy. Had some complications with borrowing again. The line `let line = lines.next().unwrap().unwrap();` does not work, I had to declare `lines` as `mut`. I have some idea why, but still not 100% sure. Also there are way too many `unwrap()`-s neccessary. There is also no quick way to get a char at some index of a string, you have to use `.nth(n)` which is an iterator and thus has a complexity of `O(n)`! That my stem from strings being UTF-xy, but it just introduces unnecessary complexity, that is not "hidden" well. Similarly with the function `find()`, which does not return a character index, but a byte index! 🤯 Works well with ASCII, but otherwise it's not guaranteed to return a true character index. Considering all the worry about memory management and all the bugs that can come of it, it seems strange nobody considered this kind of behaviour to be dangerous. 🤔 Maybe I'm just missing something...
+Relatively easy. Had some complications with borrowing again. The line 
+
+> let line = lines.next().unwrap().unwrap();
+
+does not work, I had to declare `lines` as `mut`. I have some idea why, but still not 100% sure. Also there are way too many `unwrap()`-s neccessary. There is also no quick way to get a char at some index of a string, you have to use `.nth(n)` which is an iterator and thus has a complexity of `O(n)`! That my stem from strings being UTF-xy, but it just introduces unnecessary complexity, that is not "hidden" well. Similarly with the function `find()`, which does not return a character index, but a byte index! 🤯 Works well with ASCII, but otherwise it's not guaranteed to return a true character index. Considering all the worry about memory management and all the bugs that can come of it, it seems strange nobody considered this kind of behaviour to be dangerous. 🤔 Maybe I'm just missing something...
