@@ -33,10 +33,14 @@ does not work, I had to declare `lines` as `mut`. I have some idea why, but stil
 
 ## Day 7
 
-Right... I spent WAY TOO MUCH TIME on this day. I wanted to do a proper simulation of the file system console and implement structs with methods to control all the actions. The problem was in the memory manegement and borrowing system. It seems kind of impossible to have a recursive struct reference to self in (safe) Rust. There are some workarounds, but there are "roadblocks" almost everywhere. I get the point, but it just made this task a lot more tedius that it had (any right) to be. I literally spent multiple hours here, and there is so much code...
+Right... I spent WAY TOO MUCH TIME on this day. I wanted to do a proper simulation of the file system console and implement structs with methods to control all the actions. The problem was in the memory manegement and borrowing system. It seems kind of impossible to have a recursive struct reference to self in (safe) Rust. There are some workarounds, but there are "roadblocks" almost everywhere. I get the point, but it just made this task a lot more tedious that it had (any right) to be. I literally spent multiple hours here, and there is so much code...
 
 The end result works, the only optimization that I ran out of time to implement (have to go to sleep!! 😴) is the usage of HashMap to find directory based on name we want to move to (`cd` command in the task description).
 
-A lot of the times I also just used VS Code autocomplete and "quick fixes", in addition to trial&error with placint all the `&` symbols. And conversions between `&str` and `String` are very convoluted and lead to all sorts of issues (mainly with borrowing of `String` and then having to change to `&str` or come up with some other not-so-clean-looking solution).
+A lot of the times I also just used VS Code autocomplete and "quick fixes", in addition to trial&error for correct placement of all the `&` symbols. And conversions between `&str` and `String` are very convoluted and lead to all sorts of issues (mainly with borrowing of `String` and then having to change to `&str` or come up with some other not-so-clean-looking solution).
 
 Anyway, an annoying day, but I did write quite a bit of Rust and encountered all sorts of problems, so that makes for a great learning experience! Have to stay positive! 🙌
+
+## Day 8
+
+This one was short and easy. Used `Vec<Vec<>>` and simple checks to determine result. No (major) complications 😎.
