@@ -22,7 +22,15 @@ mod day7 {
 mod day8 {
     pub mod day8;
 }
-
+mod day9 {
+    pub mod day9;
+}
+mod day10 {
+    pub mod day10;
+}
+mod day11 {
+    pub mod day11;
+}
 
 fn day1() {
     print!("Part 1: ");
@@ -74,6 +82,18 @@ fn day8() {
     day8::day8::solution();
 }
 
+fn day9() {
+    day9::day9::solution();
+}
+
+fn day10() {
+    day10::day10::solution();
+}
+
+fn day11() {
+    day11::day11::solution();
+}
+
 fn main() {
-    day8();
+    day11();
 }

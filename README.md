@@ -44,3 +44,15 @@ Anyway, an annoying day, but I did write quite a bit of Rust and encountered all
 ## Day 8
 
 This one was short and easy. Used `Vec<Vec<>>` and simple checks to determine result. No (major) complications 😎.
+
+## Day 9
+
+Nice task, but kinda got stuck on part 2. I have a small bug which produces a wrong answer on my input, but all the test cases work, so it's going to take some more debugging to figure out where th problem is.
+
+## Day 10
+
+Fairly straightforward. I really enjoyed seeing the letters pop out at the end. Satisfying 😄. Nothign much to add here, I haven't used any new Rust constructs.
+
+## Day 11
+
+Not that difficult, but input parsing was a nightmare 😵‍💫. For part 2 I had to use `u64` types and also a trick to mod each number with LCM of all test division numbers. Used enums for the first time - they make code a lot more fancy and readable, I have to use them more often movign forward! Otherwise GG, done day 10 and day 11 today 🥳. Still have to debug day 9 though...
