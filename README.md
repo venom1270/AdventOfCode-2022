@@ -47,7 +47,7 @@ This one was short and easy. Used `Vec<Vec<>>` and simple checks to determine re
 
 ## Day 9
 
-Nice task, but kinda got stuck on part 2. I have a small bug which produces a wrong answer on my input, but all the test cases work, so it's going to take some more debugging to figure out where th problem is.
+Nice task, but kinda got stuck on part 2. I have a small bug which produces a wrong answer on my input, but all the test cases work, so it's going to take some more debugging to figure out where the problem is 🤔.
 
 ## Day 10
 
