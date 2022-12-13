@@ -49,6 +49,10 @@ This one was short and easy. Used `Vec<Vec<>>` and simple checks to determine re
 
 Nice task, but kinda got stuck on part 2. I have a small bug which produces a wrong answer on my input, but all the test cases work, so it's going to take some more debugging to figure out where the problem is 🤔.
 
+EDIT (13.12.2022): Finally figured it out! The problem was that I did a complete move for each knot in one operation, which meant knots did not "follow the rope", but were literally teleported totowards the correct position, hence my solution did not generate correct places the knots visited (only final positions were 100% correct). Big shoutout to [nsk4](https://github.com/nsk4) for providing me with his input/output so I could compare my results with correct ones. 🙌
+
+Solution now contains a lot of debug code which I just commented out instead of deleting it.
+
 ## Day 10
 
 Fairly straightforward. I really enjoyed seeing the letters pop out at the end. Satisfying 😄. Nothign much to add here, I haven't used any new Rust constructs.
@@ -56,3 +60,7 @@ Fairly straightforward. I really enjoyed seeing the letters pop out at the end. 
 ## Day 11
 
 Not that difficult, but input parsing was a nightmare 😵‍💫. For part 2 I had to use `u64` types and also a trick to mod each number with LCM of all test division numbers. Used enums for the first time - they make code a lot more fancy and readable, I have to use them more often movign forward! Otherwise GG, done day 10 and day 11 today 🥳. Still have to debug day 9 though...
+
+## Day 12
+
+That was a standard uni/leetcode problem - not much difficulties. Opted for a breadth first approach, mainly beacause recursion with memoization in Rust does not seem so trivial... unless there's some special trick to it. 🤔
