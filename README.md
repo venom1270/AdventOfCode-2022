@@ -64,3 +64,15 @@ Not that difficult, but input parsing was a nightmare 😵‍💫. For part 2 I 
 ## Day 12
 
 That was a standard uni/leetcode problem - not much difficulties. Opted for a breadth first approach, mainly beacause recursion with memoization in Rust does not seem so trivial... unless there's some special trick to it. 🤔
+
+## Day 13
+
+Right... recursion. Seems I dogded it for just one measly day. Actually it went relatively smoothly, I just had to make sure no references are being held to an object I want to change (mutate). The code is a bit lenghty though, I'm sure there are some constructs that could make it shorter and more elegant. Input parsing was slightly tricky.
+
+Otherwise I had some problems because I missed an edge case, but quickly found it and fixed it. For part 2 I just used bubble sorting to sort and then find the divider packets. The assumption was (that held true for my input) that divider packets are unique, so I dodn't have to mark them in any special way. My first thought was to add a `Divider(i32)` entry to `enum Element`, but that woul convolute all the `match`es taht I used throughout the code.
+
+All in all, spent a bit more time than anticipated, but it was relatively smooth sailing otherwise.
+
+## Day 14
+
+This one was really easy. I just used a `HashSet` to store coordinate values (wall or sand) and kept inserting elements until stop condition. Nothing special to write about here 😄.

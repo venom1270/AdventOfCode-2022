@@ -34,6 +34,12 @@ mod day11 {
 mod day12 {
     pub mod day12;
 }
+mod day13 {
+    pub mod day13;
+}
+mod day14 {
+    pub mod day14;
+}
 
 fn day1() {
     print!("Part 1: ");
@@ -101,7 +107,15 @@ fn day12() {
     day12::day12::solution();
 }
 
+fn day13() {
+    day13::day13::solution();
+}
+
+fn day14() {
+    day14::day14::solution();
+}
+
 fn main() {
-    day12();
+    day14();
 }
 
