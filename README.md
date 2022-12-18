@@ -76,3 +76,19 @@ All in all, spent a bit more time than anticipated, but it was relatively smooth
 ## Day 14
 
 This one was really easy. I just used a `HashSet` to store coordinate values (wall or sand) and kept inserting elements until stop condition. Nothing special to write about here 😄.
+
+## Day 15
+
+I was busy the last few days, so I'm 3 days behind! 😅 Aynway, his one one a bit tricky to me. No issues with Rust thankfully, but I did struggle a bit with finding a correct algorithm. Part 1 was done using `HashSet` and storing each coordinate in it, but that proved inefficient (i.e. slow) on part 2. So part 2 I used intervals, but it still takes a few seconds to find the distress signal. For the frequency I converted both coordinates to `u128` (although `u64` would be enough), which is big enough to hold the frequency value. Overall spent too much time tinkering with the intervals algorithm, but I managed to get it working in the end 😄.
+
+## Day 16
+
+Again spent wayyy too much time on this one... Rust is trying really hard to be as difficult as possible for this task. Today is not my day apparently. Still getting incorrect result for part 2. Must be a really small detail that I'm missing as the test case works fine. Very dirty solution. Debugging awaits... 🤯.
+
+Ok, managed to solve it, but the solution is slightly fitted towards my input - might not work for all inputs 😅.
+
+## Day 17
+
+Part 1 done without difficulties. Tried to use enums and structs. Will do part 2 tomorrow (well, technically today...). Seems like a fun optimization challenge. I already have some ideas.
+
+Whew, 2 and a half days in one day (well, technically a day and a bit...)! Not bad! 😎
