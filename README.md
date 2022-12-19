@@ -92,3 +92,7 @@ Ok, managed to solve it, but the solution is slightly fitted towards my input - 
 Part 1 done without difficulties. Tried to use enums and structs. Will do part 2 tomorrow (well, technically today...). Seems like a fun optimization challenge. I already have some ideas.
 
 Whew, 2 and a half days in one day (well, technically a day and a bit...)! Not bad! 😎
+
+## Day 18
+
+This one was relatively easy. Reminds me of 3sum Leetcode question. For part 2 I just did DFS to discover air bubbles and use part 1 function to calculate number of surfaces. Implemented DFS with queue, because Rust. 😎
