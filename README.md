@@ -96,3 +96,7 @@ Whew, 2 and a half days in one day (well, technically a day and a bit...)! Not b
 ## Day 18
 
 This one was relatively easy. Reminds me of 3sum Leetcode question. For part 2 I just did DFS to discover air bubbles and use part 1 function to calculate number of surfaces. Implemented DFS with queue, because Rust. 😎
+
+## Day 19
+
+Used a straightforward approach for this one. It takes a while to complete (have to manually enable some heuristic momoization optimizations for part 1 and 2 separately to get results in real time) so it's not too optimized, but I managed to get the correct result. Used structs and an enum. Had no Rust/borrowing problems! 😎 
