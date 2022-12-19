@@ -99,4 +99,4 @@ This one was relatively easy. Reminds me of 3sum Leetcode question. For part 2 I
 
 ## Day 19
 
-Used a straightforward approach for this one. It takes a while to complete (have to manually enable some heuristic momoization optimizations for part 1 and 2 separately to get results in real time) so it's not too optimized, but I managed to get the correct result. Used structs and an enum. Had no Rust/borrowing problems! 😎 
+Used a straightforward approach for this one. It takes a while to complete (have to manually enable some heuristic memoization optimizations for part 1 and 2 separately to get results in real time) so it's not too optimized, but I managed to get the correct result. Used structs and an enum. Had no Rust/borrowing problems! 😎 
