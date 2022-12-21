@@ -169,6 +169,7 @@ fn simulate(bp: &Blueprint, MINUTES: u32) -> u32{
         }
 
         states_to_add.push(s);
+        states_to_add.reverse();
         for mut new_state in states_to_add {
             new_state.time += 1;
             if new_state.time > MINUTES {

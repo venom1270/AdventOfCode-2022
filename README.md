@@ -100,3 +100,11 @@ This one was relatively easy. Reminds me of 3sum Leetcode question. For part 2 I
 ## Day 19
 
 Used a straightforward approach for this one. It takes a while to complete (have to manually enable some heuristic memoization optimizations for part 1 and 2 separately to get results in real time) so it's not too optimized, but I managed to get the correct result. Used structs and an enum. Had no Rust/borrowing problems! 😎 
+
+## Day 20
+
+Well... I can't even get one star because I can't figure out the wrapping logic behind the procedure... don't even know how to do it by hand on paper 😭. There should be more test cases to showcase how exactly the algorithm should work 🤔.
+
+## Day 21 
+
+This one was relatively easy. Solved it by using a `HashMap` of monkeys and recursively calculating their numbers. No memoization, although it could make things more optimal in some cases. For part two I used a binary serach to find the correct value. "Koko eating bananas" flashback - maybe that's where the inspiration for monkeys in the story came from 😎.
