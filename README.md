@@ -107,4 +107,4 @@ Well... I can't even get one star because I can't figure out the wrapping logic 
 
 ## Day 21 
 
-This one was relatively easy. Solved it by using a `HashMap` of monkeys and recursively calculating their numbers. No memoization, although it could make things more optimal in some cases. For part two I used a binary serach to find the correct value. "Koko eating bananas" flashback - maybe that's where the inspiration for monkeys in the story came from 😎.
+This one was relatively easy. Solved it by using a `HashMap` of monkeys and recursively calculating their numbers. No memoization, although it could make things more optimal in some cases. For part two I used a binary search to find the correct value. "Koko eating bananas" flashback - maybe that's where the inspiration for monkeys in the story came from 😎.
