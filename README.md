@@ -108,3 +108,8 @@ Well... I can't even get one star because I can't figure out the wrapping logic 
 ## Day 21 
 
 This one was relatively easy. Solved it by using a `HashMap` of monkeys and recursively calculating their numbers. No memoization, although it could make things more optimal in some cases. For part two I used a binary search to find the correct value. "Koko eating bananas" flashback - maybe that's where the inspiration for monkeys in the story came from 😎.
+
+
+## Day 22 
+
+Part 1 was easy, but part 2 is proving difficult because it's hard to test. I may have missed one digit when wrapping around the cube. I have to look at it later.
