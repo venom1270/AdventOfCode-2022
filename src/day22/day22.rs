@@ -162,7 +162,11 @@ fn find_wrap_around_cube(map: &HashMap<(u32, u32), Tile>, mut current_position: 
                     let a = areas[3];
                     // 1,51 -> 1,150
                     // 10,51 -> 1,141
-                    current_position = (1, 151 - current_position.0);
+                    //current_position = (1, 151 - current_position.0);
+
+                    // 1,51 -> 150,1
+                    // 10,51 -> 141,1
+                    current_position = (151 - current_position.0, 1);
                     direction = 0;
                 },
                 3 => {
@@ -195,7 +199,11 @@ fn find_wrap_around_cube(map: &HashMap<(u32, u32), Tile>, mut current_position: 
                     let a = areas[5];
                     // 1,101 -> 200,50
                     // 1,110 -> 200,41
-                    current_position = (200, 151 - current_position.1);
+                    //current_position = (200, 151 - current_position.1);
+
+                    // 1,101 -> 200,1
+                    // 1,110 -> 200,10
+                    current_position = (200, current_position.1 - 100);
                     direction = 3;
                 },
                 _ => unreachable!("ERROR 0")
@@ -296,10 +304,7 @@ fn find_wrap_around_cube(map: &HashMap<(u32, u32), Tile>, mut current_position: 
     return (current_position.0, current_position.1, direction);
 }
 
-pub fn solution() {
-    let file_path = String::from("src/day22/1.txt");
-    let (map, directions, areas) = parse_input(file_path);
-
+fn solve(map: &HashMap<(u32, u32), Tile>, directions: &Vec<(u32, i32)>, areas: [(u32, u32, u32, u32); 6], cube_wrapping: bool) -> u32 {
     let mut current_position = find_start_position(&map);
     let mut current_direction: i32 = 0;
     let mut next_direction = 0;
@@ -308,7 +313,7 @@ pub fn solution() {
 
         // println!("{} {}", val, turn);
         // Make 'val' steps
-        for _ in 0..val {
+        for _ in 0..*val {
 
             let mut next_position = current_position; 
             match current_direction {
@@ -321,9 +326,11 @@ pub fn solution() {
 
             if let None = map.get(&next_position) {
                 // Wrap around...
-                //next_position = find_wrap_around(&map, current_position, (current_direction + 2) as u32 % 4);
-
-                (next_position.0, next_position.1, next_direction) = find_wrap_around_cube(&map, current_position, current_direction as u32, areas);
+                if cube_wrapping {
+                    (next_position.0, next_position.1, next_direction) = find_wrap_around_cube(&map, current_position, current_direction as u32, areas);
+                } else {
+                    next_position = find_wrap_around(&map, current_position, (current_direction + 2) as u32 % 4);
+                }                
             }
 
             if let Some(pos) = map.get(&next_position) {
@@ -337,7 +344,6 @@ pub fn solution() {
             } else {
                 println!("Error let Some next position");
             }
-
         }
 
         current_direction = (current_direction + turn) % 4;
@@ -349,8 +355,18 @@ pub fn solution() {
     }
 
     let final_password = 1000 * current_position.0 + 4 * current_position.1 + current_direction as u32;
-    println!("Final password (part 1): {}", final_password);
-    // 3360, 132088, 141173 - too low | not right: 157062
+    return final_password
+}
+
+pub fn solution() {
+    let file_path = String::from("src/day22/1.txt");
+    let (map, directions, areas) = parse_input(file_path);
+
+    let pwd_normal_wrapping = solve(&map, &directions, areas, false);
+    let pwd_cube_wrapping = solve(&map, &directions, areas, true);
+
+    println!("Final password (normal wrapping): {}", pwd_normal_wrapping);
+    println!("Final password (cube wrapping): {}", pwd_cube_wrapping);
 
 }
 

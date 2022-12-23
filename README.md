@@ -113,3 +113,5 @@ This one was relatively easy. Solved it by using a `HashMap` of monkeys and recu
 ## Day 22 
 
 Part 1 was easy, but part 2 is proving difficult because it's hard to test. I may have missed one digit when wrapping around the cube. I have to look at it later.
+
+UPDATE (next day, 23. 12. 2022): Solved part 2 easily, all I needed was some sleep and a break from all the numbers 😅. There was a bug in wrapping logic - fixed some numbers and now it works 😄. The solution is hardcoded to a specific shape of input though.
