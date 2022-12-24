@@ -121,3 +121,9 @@ UPDATE (next day, 23. 12. 2022): Solved part 2 easily, all I needed was some sle
 That one was relatively straightforward and fun 😄! I used `HashMap`s where I could to gain performance. Part 2 takes a few seconds to compute.
 
 Now I need to gather the willpower to return to day 20, and to think of a solution to part 2 of day 17...
+
+## Day 24
+
+Relatively simple, but used too much time here. Used A*, but got confused with memoization so I was stuck for an hour figuring out the meaning of exponential function 😅. A* probably wasn't neccessary, since pruning of "bad" states is sufficient enough to search the whole space.
+
+The one thing in part 2 I was sceptical about is if I can just rerun A* three times - turns out I can! But what guarantees, that the best solution in the first part is the best solution for part 2 (two subsequent runs of A*)? Not sure about that... 🤔

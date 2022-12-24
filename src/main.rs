@@ -67,7 +67,9 @@ mod day22 {
 mod day23 {
     pub mod day23;
 }
-
+mod day24 {
+    pub mod day24;
+}
 
 
 fn day1() {
@@ -180,9 +182,12 @@ fn day23() {
     day23::day23::solution();
 }
 
+fn day24() {
+    day24::day24::solution();
+}
 
 
 fn main() {
-    day23();
+    day24();
 }
 
