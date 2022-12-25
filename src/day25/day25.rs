@@ -1,8 +1,4 @@
 use advent_of_code_2022::file_utils::read_lines;
-use std::collections::{HashSet, HashMap, VecDeque, BinaryHeap};
-use std::cmp::{min,max, Ordering};
-
-
 
 fn parse_input(file_path: String) -> Vec<String> {
     let mut numbers: Vec<String> = Default::default();
@@ -36,7 +32,6 @@ fn decimal_to_snafu(number: i64) -> String {
     let mut max_number: [u64; 20] = [2; 20];
     for i in 1..20 {
         max_number[i] = max_number[i-1] + 2*5_u64.pow(i as u32);
-        //println!("{}", max_number[i]);
     }
 
     let mut num_places = 0;
@@ -57,27 +52,21 @@ fn decimal_to_snafu(number: i64) -> String {
         for (val, ch) in options {
             let value = current_decimal + val*pow;
             let d = (value - number as i64).abs();
-            //println!("d: {}", d);
             if d < diff {
                 best = value;
                 c = ch;
                 diff = d;
             }
         }
-
-        //println!("Best: {} | diff: {}", best, diff);
         current_decimal = best;
         snafu_number.push(c);
     }
-
-    //println!("{}: {}", number, snafu_number);
     snafu_number
 }
 
 pub fn solution() {
     let file_path = String::from("src/day25/1.txt");
     let numbers = parse_input(file_path);
-
     let mut sum_decimal = 0;
     for n in numbers {
         sum_decimal += snafu_to_decimal(n);
@@ -85,9 +74,7 @@ pub fn solution() {
     println!("Decimal SUM of numbers: {}", sum_decimal);
     let sum_snafu = decimal_to_snafu(sum_decimal);
     println!("SNAFU SUM of numbers: {}", sum_snafu);
-    
-    
-    
+       
     /*decimal_to_snafu(1);
     decimal_to_snafu(2);
     decimal_to_snafu(3);
@@ -96,7 +83,6 @@ pub fn solution() {
     decimal_to_snafu(20);
     decimal_to_snafu(2022);
     decimal_to_snafu(12345);*/
-
 }
 
 
