@@ -45,23 +45,32 @@ pub fn solution() {
     }
     
     for i in 0..len {
-        let mut n = original_numbers[i];
-        let mut ni = find_index(&numbers, i);
-
-        if n > 0 {
-            while n > 0 {
-                numbers.swap(ni % len, (ni + 1) % len);
-                ni += 1;
-                n -= 1;
-            }
-        } else if n < 0 {
-            while n < 0 {
-                numbers.swap(ni % len, (ni - 1) % len);
-                ni += 1;
-                n -= 1;
-            }
+        let n = original_numbers[i];
+        if n == 0 {
+            continue;
         }
-        
+        let numbers_index = find_index(&numbers, i);
+        let mut wrap_around = (n+numbers_index as i32) / len as i32;
+        let additional = n / len as i32;
+        if wrap_around > 1 {
+            wrap_around = 0;
+        } 
+        let mut move_to = (n+numbers_index as i32 + wrap_around + additional) % len as i32;
+        if move_to < 0 {
+            move_to += len as i32  - 1;
+        }
+        if move_to == 0 {
+            move_to = len as i32 - 1;
+        }
+        /*if move_to < numbers_index as i32 {
+            move_to += 1;
+        }*/
+        /*if move_to == len as i32 - 1 {
+            move_to = 0;
+        }*/
+        println!("Moving {} from {} to {}", n, numbers_index, move_to);
+        numbers.remove(numbers_index);
+        numbers.insert(move_to as usize, (i, n));
         //print(&numbers);
     }   
 

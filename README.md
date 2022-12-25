@@ -127,3 +127,13 @@ Now I need to gather the willpower to return to day 20, and to think of a soluti
 Relatively simple, but used too much time here. Used A*, but got confused with memoization so I was stuck for an hour figuring out the meaning of exponential function 😅. A* probably wasn't neccessary, since pruning of "bad" states is sufficient enough to search the whole space.
 
 The one thing in part 2 I was sceptical about is if I can just rerun A* three times - turns out I can! But what guarantees, that the best solution in the first part is the best solution for part 2 (two subsequent runs of A*)? Not sure about that... 🤔
+
+## Day 25
+
+That one was simple - as it should be on Christmas day 😄. But for part 2 (if there even is a part 2?) I need to get the three missing stars:
+
+* Day 20 - part 1 
+* Day 20 - part 2
+* Day 17 - part 2
+
+I hope I do it till New year 😎.
