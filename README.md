@@ -145,3 +145,9 @@ I hope I do it till New year 😎.
 Finally solved day 20. Everything was correct, except for a small bug when calculating the final result. The catch was, that it **worked correctly on test input**, so that's why I couldn't figure it out 😵‍💫! Thankfully I solved it finally. This [reddit comment](https://www.reddit.com/r/adventofcode/comments/zqezkn/2022_day_20_solutions/j17piu9/) helped me to find the problem. As per the comment, I also used `i64::rem_euclid()` method instead of `%`. I did everything by myself, just compared the code to see where the difference was (there wasn't almost any, functionally). Part 2 was easy, had no problems there. Only Day 17 part 2 left 😎.
 
 So, the problem was that I didn't use the current number index when searching for the final number positions (to calculate grove coordinates), but the original number index by mistake! 😅
+
+### Solved day 17 - part 2 (25. 12. 2022, evening)
+
+Finally! Had to do cycle detection, checked reddit for some hints to make sure I was on the right track. The intiial solution was going in the right direction, but I once again had a stupid bug in there, plus I didn't pursue it far enough. Managed to fix it now 😎. The code is garbage, but it works - the answer outputs immediately!
+
+Now, onwards to Day 25, part 2!! 🙌

@@ -175,42 +175,69 @@ pub fn solution() {
 
     const AREA_WIDTH: usize = 7;
     
-    const NUM_SHAPES: u64 = 2022; //1000000000000;
+    const NUM_SHAPES: u64 = 1000000000000; //2022; //1000000000000;
+    const TOP_ROWS_HEIGHT: usize = 50;
     let mut board: [[u32; AREA_HEIGHT]; AREA_WIDTH] = [[0; AREA_HEIGHT]; AREA_WIDTH];
     let mut top: [i64; AREA_WIDTH] = [-1; AREA_WIDTH];
     let mut directions_index: usize = 0;
     let mut y_shift: i64 = 0;
 
-    let mut hs: HashMap<(u32, u32), Vec<i32>> = Default::default();
+    let mut top_rows: [[u32; TOP_ROWS_HEIGHT]; AREA_WIDTH] = [[0; TOP_ROWS_HEIGHT]; AREA_WIDTH];
 
-    for i in 0..NUM_SHAPES {
+    let mut memo: HashMap<(u32, u32), (Vec<Vec<u32>>, i64, u64)> = Default::default();
+
+    let mut i = 0;
+    //for i in 0..NUM_SHAPES {
+    while i < NUM_SHAPES {
+        
         let top_y = top.iter().max_by(|x, y| x.cmp(y)).unwrap() + 4;
         let shape_index = (i % SHAPE_TYPE_ARRAY.len() as u64) as usize;
         let mut shape = Shape::new(SHAPE_TYPE_ARRAY[shape_index], (2, top_y as i64));
 
-        /*if let Some(val) = hs.get(&(shape_index as u32, directions_index as u32)) {
+        // Cycle detection
+        if let Some((val, old_shift, old_i)) = memo.get(&(shape_index as u32, directions_index as u32)) {
             let mut found: bool = true;
-            //println!("QWE!!!");
-            let t = val.iter().max_by(|x,y| x.cmp(y)).unwrap();
-            for j in 0..AREA_WIDTH {
-                found &= t-*val.get(j).unwrap() == top_y-top[j as usize];
+            //println!("QWE!!! {}", i);
+            for rows_i in 0..top_rows.len() {
+                for rows_j in 0..top_rows[0].len() {
+                    if val[rows_i][rows_j] != top_rows[rows_i][rows_j] {
+                        found = false;
+                        break;
+                    }
+                }
+                if !found {
+                    break;
+                }
             }
             if found {
-                println!("REPEAT!!!");
+                println!("REPEAT!!! i={} | dir_index: {} | old_i = {}", i, directions_index, old_i);
+                
+                let q = (NUM_SHAPES-old_i) / (i-old_i);
+                //y_shift *= q as i64;
+                let t = top.iter().max_by(|x, y| x.cmp(y)).unwrap();
+                y_shift += (t + y_shift - old_shift) * (q-1) as i64;
+                //76852
+                i += (q-1) * (i-old_i);
+                memo.clear();
+                //break;
             }
-        } 
-        hs.insert((shape_index as u32, directions_index as u32), top.to_vec());*/
+        }
+        // Very inefficient way to convert 2D array to 2D Vec
+        let mut ewq: Vec<Vec<u32>> = Default::default();
+        for rows_i in 0..top_rows.len() {
+            let mut q: Vec<u32> = Default::default();
+            for rows_j in 0..top_rows[0].len() {
+                q.push(top_rows[rows_i][rows_j]);
+            }
+            ewq.push(q);
+        }
+        memo.insert((shape_index as u32, directions_index as u32), (ewq, y_shift + top.iter().max_by(|x,y| x.cmp(y)).unwrap(), i));
 
 
         // Move and fall shape
         loop {
             let dir = directions.get(directions_index).unwrap();
             shape.move_shape(dir, &board);
-            /*match dir {
-                Direction::Left => println!("Moving shape left"),
-                Direction::RIght => println!("Moving shape right")
-            }
-            shape.print_coords();*/
             directions_index = (directions_index + 1) % directions.len();
             if !shape.fall(&mut board) {
                 break;
@@ -224,13 +251,12 @@ pub fn solution() {
             }
         }
 
-        /*print!("Top: ");
-        for t in top {
-            print!("{} ", t);
-        }
-        println!();*/
-
-        /*if i % 500 == 0 {
+        if i % 500 == 0 {
+            // Every few steps clean the board (to save memory)
+            if i % 500000 == 0 {
+                println!("i = {} Remaining: {} | % done: {}", i, NUM_SHAPES - i, i*100/NUM_SHAPES);
+            }
+           
             //println!("Cleaning board");
             let mut clean_y = -1;
             for j in (0..*top.iter().max_by(|x,y| x.cmp(y)).unwrap()).rev() {
@@ -245,9 +271,9 @@ pub fn solution() {
                     clean_y = j;
                 }
             }
-            if top_y > AREA_HEIGHT as i32 - 1000 {
+            if top_y > AREA_HEIGHT as i64 - 1000 {
                 //println!("Force clean");
-                clean_y = AREA_HEIGHT as i32 / 3;
+                clean_y = AREA_HEIGHT as i64 / 3;
             } 
             if clean_y != -1 && clean_y != 0 {
                 // Shift y to 0
@@ -263,8 +289,21 @@ pub fn solution() {
                 }
                 y_shift += clean_y as i64;
             }
-        
-        }*/
+        }
+
+        // Save top TOP_ROWS_HEIGHT rows to then check memo for cycle detection
+        if top_y > TOP_ROWS_HEIGHT as i64 + 10 {
+            let t = top.iter().max_by(|x, y| x.cmp(y)).unwrap();
+            for rows_i in 0..AREA_WIDTH {
+                for rows_j in 0..TOP_ROWS_HEIGHT {
+                    //println!("{} | {}", t, (rows_j as i64 +t-19));
+                    top_rows[rows_i][rows_j] = board[rows_i][(rows_j as i64 +t-1-TOP_ROWS_HEIGHT as i64) as usize];
+                }
+            }
+        }
+
+
+        i += 1;
 
     }
 

@@ -194,5 +194,5 @@ fn day25() {
 }
 
 fn main() {
-    day20();
+    day17();
 }
