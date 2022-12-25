@@ -151,3 +151,17 @@ So, the problem was that I didn't use the current number index when searching fo
 Finally! Had to do cycle detection, checked reddit for some hints to make sure I was on the right track. The intiial solution was going in the right direction, but I once again had a stupid bug in there, plus I didn't pursue it far enough. Managed to fix it now 😎. The code is garbage, but it works - the answer outputs immediately!
 
 Now, onwards to Day 25, part 2!! 🙌
+
+# Advent of Code 2022 SOLVED! (25. 12. 2022)
+
+![Proof](res/proof.png?raw=true "Proof")
+
+Turns out there's no part 2 (well, except for starting the blender!)!
+
+This makes it the first AoC I fully completed 🥳. Last year I tried Haskell, but didn't get past day 17 or so. Looking forward to next year!
+
+As for Rust, by the end I was quite comfortable with it and find it kinda fun to write in. Strong and smart type checking, speed, and some modern concepts (tuples, pattern matching, functional programming - although I didn't dive too much into that) make it an interesting choice to learn. Also, it truly is memory safe, I got no SegFaults 😎, but the code has to be adjusted to make it even work. Despite some difficulties with Rust during the first week or two, I'd say it's a good language.
+
+Having those Rust basics down, the next step would be to look at [Tauri](https://tauri.app/). I hope I find the time and motivation to finally start (and that my Rust skills are at least sufficient now!).
+
+Until then, I will definitely be doing the next AoC challenge. Can't wait for next December!! 🥳😎😅
