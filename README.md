@@ -3,6 +3,8 @@ Learning a new language with [AoC2022](https://adventofcode.com/2022) - [Rust](h
 
 Using [VS code](https://code.visualstudio.com/) with [Rust extension](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) (duh!).
 
+Check [the update on 15. 1. 2023!](#update-15-1-2023)
+
 ## Day 1
 
 Took a lot more time than anticipated 😒. File reading is a bit too convoluted and unclear. Optionals everywhere. Also having to use `mut` on most variables seems wrong somehow... Overall first impression - not great! I'm up to a <i>fun</i> month 😅.
@@ -165,3 +167,7 @@ As for Rust, by the end I was quite comfortable with it and find it kinda fun to
 Having those Rust basics down, the next step would be to look at [Tauri](https://tauri.app/). I hope I find the time and motivation to finally start (and that my Rust skills are at least sufficient now!).
 
 Until then, I will definitely be doing the next AoC challenge. Can't wait for next December!! 🥳😎😅
+
+## Update 15. 1. 2023
+
+I have just commited the first version of [AoC2022-UI](https://github.com/venom1270/AdventOfCode-2022-UI). Made with Tauri. Check it out! 🥳🎉
